@@ -1,16 +1,34 @@
+from datetime import date
+
 print("🎂 Age Calculator Program")
 
-birth_year = input("Enter your birth year: ")
-current_year = input("Enter current year: ")
+# User input
+birth_day = int(input("Enter birth day (DD): "))
+birth_month = int(input("Enter birth month (MM): "))
+birth_year = int(input("Enter birth year (YYYY): "))
 
-if not birth_year.isdigit() or not current_year.isdigit():
-    print("❌ Please enter valid numeric values only")
-else:
-    birth_year = int(birth_year)
-    current_year = int(current_year)
+# Today's date
+today = date.today()
 
-    if birth_year > current_year:
-        print("❌ Birth year cannot be greater than current year")
-    else:
-        age = current_year - birth_year
-        print(f"✅ Your age is: {age} years")
+# Birth date object
+birth_date = date(birth_year, birth_month, birth_day)
+
+# Calculate age
+years = today.year - birth_date.year
+months = today.month - birth_date.month
+days = today.day - birth_date.day
+
+if days < 0:
+    months -= 1
+    days += 30
+
+if months < 0:
+    years -= 1
+    months += 12
+
+# Output
+print("\n📅 Today's Date:", today.strftime("%d %B %Y"))
+print("📆 Day:", today.strftime("%A"))
+
+print("\n🎉 Your Age Is:")
+print(f"👉 {years} Years, {months} Months, {days} Days")

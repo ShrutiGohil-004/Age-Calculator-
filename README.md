@@ -2,23 +2,23 @@
 
 Description
 
-A beginner-friendly Python program that calculates a person's age based on birth year.
+A beginner-friendly Python program that calculates a person's age in years, months, and days.
 
 Features
 
-- Takes user input
-- Validates input
-- Calculates age accurately
-- Simple and easy to understand
+- Takes full birth date (DD/MM/YYYY)
+- Calculates exact age
+- Displays today's date and day
+- Simple and easy logic
 
 Concepts Used
 
-- Input & Output
-- Type conversion
-- Conditional statements
+- datetime module
+- User input
 - Arithmetic operations
+- Conditional logic
 
 How to Run
 
 ```bash
-python age_calculator.py
+python app.py
