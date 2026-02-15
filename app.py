@@ -1,11 +1,12 @@
 from datetime import date
 
 print("🎂 Age Calculator Program")
+print("Enter your date of birth below (DD/MM/YYYY)\n")
 
 try:
-    birth_day = int(input("Enter birth day (DD): "))
-    birth_month = int(input("Enter birth month (MM): "))
-    birth_year = int(input("Enter birth year (YYYY): "))
+    birth_day = int(input("Day (DD): "))
+    birth_month = int(input("Month (MM): "))
+    birth_year = int(input("Year (YYYY): "))
 
     birth_date = date(birth_year, birth_month, birth_day)
     today = date.today()
@@ -23,9 +24,9 @@ try:
         months += 12
 
     print("\n📅 Today's Date:", today.strftime("%d %B %Y"))
-    print("📆 Day:", today.strftime("%A"))
-
-    print(f"\n🎉 Your Age: {years} Years, {months} Months, {days} Days")
+    print("📆 Today is:", today.strftime("%A"))
+    print("\n🎉 Your Exact Age")
+    print(f"👉 {years} Years, {months} Months, {days} Days")
 
 except ValueError:
-    print("❌ Invalid input or date. Please enter correct values.")
+    print("\n❌ Invalid input! Please enter a valid date.")
